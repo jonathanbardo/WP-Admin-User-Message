@@ -23,7 +23,7 @@ This plugin will enable the site administrator to easily create an admin message
 
 **Improvement? Bugs?**
 
-Please fill out an issue [here](https://github.com/jonathanbardo/WP-Date-Range-Filter/issues).
+Please fill out an issue [here](https://github.com/jonathanbardo/WP-Admin-User-Message/issues).
 
 ## Changelog ##
 
