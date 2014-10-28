@@ -43,6 +43,8 @@ class Admin_User_Message {
 			add_action( 'wp_ajax_admin_user_message_dismiss', array( static::$class, 'dismiss_message' ) );
 			add_action( 'wp_logout',                          array( static::$class, 'remove_dismissal' ) );
 		}
+		
+		add_filter( 'option_page_capability_' . self::PAGE_NAME, function(){ return apply_filters( 'admin_user_message_cap', 'manage_options' ); } );
 	}
 
 	/**
