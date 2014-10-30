@@ -38,12 +38,13 @@ class Admin_User_Message {
 		add_action( 'admin_init', array( static::$class, 'register_settings_fields' ) );
 		add_action( 'admin_menu', array( static::$class, 'register_settings_page' ) );
 
-		if ( ! empty( get_option( self::SETTINGS_PREFIX . 'active' ) ) ) {
+		$is_active = get_option( self::SETTINGS_PREFIX . 'active' );
+		if ( ! empty( $is_active ) ) {
 			add_action( 'admin_notices',                      array( static::$class, 'add_admin_notices' ) );
 			add_action( 'wp_ajax_admin_user_message_dismiss', array( static::$class, 'dismiss_message' ) );
 			add_action( 'wp_logout',                          array( static::$class, 'remove_dismissal' ) );
 		}
-		
+
 		add_filter( 'option_page_capability_' . self::PAGE_NAME, function(){ return apply_filters( 'admin_user_message_cap', 'manage_options' ); } );
 	}
 
@@ -251,22 +252,22 @@ class Admin_User_Message {
 			array( self::$class, 'page_callback' )
 		);
 	}
-	
+
 	/**
 	 * Page function
 	 */
 	public static function page_callback() {
 		?>
-			<div class="wrap">
-				<h2><?php _e( 'Admin User Message Settings', 'admin-user-message' ); ?></h2>
-				<form action="options.php" method="post">
-					<?php settings_fields( self::PAGE_NAME ); ?>
-					<?php do_settings_sections( self::PAGE_NAME ); ?>
+		<div class="wrap">
+			<h2><?php _e( 'Admin User Message Settings', 'admin-user-message' ); ?></h2>
+			<form action="options.php" method="post">
+				<?php settings_fields( self::PAGE_NAME ); ?>
+				<?php do_settings_sections( self::PAGE_NAME ); ?>
 
-					<?php submit_button(); ?>
-				</form>
-			</div>
-		<?php
+				<?php submit_button(); ?>
+			</form>
+		</div>
+	<?php
 	}
 
 	/**
@@ -279,62 +280,64 @@ class Admin_User_Message {
 		if ( ! self::can_show_message_for_role() || self::user_has_dismissed() && $dismiss_enabled || empty( $content ) ) {
 			return false;
 		}
+
+		$is_dismiss = get_option( self::SETTINGS_PREFIX . 'dismiss' );
 		?>
-			<style>
-				.admin-user-message p {
-					display: inline-block;
-				}
+		<style>
+			.admin-user-message p {
+				display: inline-block;
+			}
 
-				.admin-user-message p.content {
-					max-width: 80%;
-				}
+			.admin-user-message p.content {
+				max-width: 80%;
+			}
 
-				.admin-user-message p.dismiss {
-					float: right;
-				}
+			.admin-user-message p.dismiss {
+				float: right;
+			}
 
-				.admin-user-message p.dismiss a {
-					text-decoration: none;
-				}
+			.admin-user-message p.dismiss a {
+				text-decoration: none;
+			}
 
-				.admin-user-message p.dismiss a:before {
-					font-family: 'dashicons';
-					content: "\f158";
-					vertical-align: middle;
-				}
+			.admin-user-message p.dismiss a:before {
+				font-family: 'dashicons';
+				content: "\f158";
+				vertical-align: middle;
+			}
 
-				.admin-user-message.update-nag p.content {
-					margin-right: 10px;
-				}
-			</style>
-			<div class="<?php echo esc_attr( get_option( self::SETTINGS_PREFIX . 'type', 'updated' ) ); ?> admin-user-message">
-				<p class="content"><?php echo $content; //xss ok ?></p>
-				<?php if ( ! empty( get_option( self::SETTINGS_PREFIX . 'dismiss' ) ) ):  ?>
+			.admin-user-message.update-nag p.content {
+				margin-right: 10px;
+			}
+		</style>
+		<div class="<?php echo esc_attr( get_option( self::SETTINGS_PREFIX . 'type', 'updated' ) ); ?> admin-user-message">
+			<p class="content"><?php echo $content; //xss ok ?></p>
+			<?php if ( ! empty( $is_dismiss ) ):  ?>
 				<p class="dismiss">
 					<a href="<?php echo admin_url( 'admin-ajax.php?action=admin_user_message_dismiss&admin_user_message_nonce=' . wp_create_nonce( 'admin_user_message_nonce' ) ); //xss ok ?>"
 					   title="<?php esc_html_e( 'Dismiss this message', 'admin-user-message' ); ?>">
 						<?php esc_html_e( 'Dismiss', 'admin-user-message' ); ?>
 					</a>
 				</p>
-				<?php endif ?>
-			</div>
-			<script>
-				(function($) {
-					$('.admin-user-message p.dismiss a').on('click', function(event) {
-						event.preventDefault();
-						var $link = $(this);
-						$.get(
-							$link.attr('href'),
-							function(data) {
-								if (data.success === true) {
-									$link.parents('.admin-user-message').slideToggle();
-								}
+			<?php endif ?>
+		</div>
+		<script>
+			(function($) {
+				$('.admin-user-message p.dismiss a').on('click', function(event) {
+					event.preventDefault();
+					var $link = $(this);
+					$.get(
+						$link.attr('href'),
+						function(data) {
+							if (data.success === true) {
+								$link.parents('.admin-user-message').slideToggle();
 							}
-						)
-					});
-				})(jQuery);
-			</script>
-		<?php
+						}
+					)
+				});
+			})(jQuery);
+		</script>
+	<?php
 	}
 
 	/**
