@@ -116,7 +116,7 @@ class Admin_User_Message {
 		$id = self::SETTINGS_PREFIX . 'dismiss';
 		add_settings_field(
 			$id,
-			__( 'Allow message to be dismiss', 'admin-user-message' ),
+			__( 'Allow message to be dismissed', 'admin-user-message' ),
 			array( static::$class, 'checkbox_render' ),
 			self::PAGE_NAME,
 			'default',
@@ -131,7 +131,7 @@ class Admin_User_Message {
 		$id = self::SETTINGS_PREFIX . 'reset';
 		add_settings_field(
 			$id,
-			__( 'Force message display on page reload', 'admin-user-message' ),
+			__( 'Reset dismiss for everyone. (Force appearance of message)', 'admin-user-message' ),
 			array( static::$class, 'checkbox_render' ),
 			self::PAGE_NAME,
 			'default',
