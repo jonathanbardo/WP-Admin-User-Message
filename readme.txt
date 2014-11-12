@@ -25,5 +25,8 @@ Please fill out an issue [here](https://github.com/jonathanbardo/WP-Admin-User-M
 
 == Changelog ==
 
+= 0.0.2 =
+Conserve wysiwyg line break on display
+
 = 0.0.1 =
 Initial release.
