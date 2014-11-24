@@ -27,6 +27,9 @@ Please fill out an issue [here](https://github.com/jonathanbardo/WP-Admin-User-M
 
 ## Changelog ##
 
+### 0.0.3 ###
+Change css for dismiss button
+
 ### 0.0.2 ###
 Conserve line break on display
 

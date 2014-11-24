@@ -284,23 +284,21 @@ class Admin_User_Message {
 		$is_dismiss = get_option( self::SETTINGS_PREFIX . 'dismiss' );
 		?>
 		<style>
-			.admin-user-message p {
-				display: block;
-			}
-
-			.admin-user-message p.content {
+			.admin-user-message div.content {
+				display: inline-block;
 				max-width: 80%;
 			}
 
-			.admin-user-message p.dismiss {
+			.admin-user-message div.dismiss {
+				margin-top: 5px;
 				float: right;
 			}
 
-			.admin-user-message p.dismiss a {
+			.admin-user-message div.dismiss a {
 				text-decoration: none;
 			}
 
-			.admin-user-message p.dismiss a:before {
+			.admin-user-message div.dismiss a:before {
 				font-family: 'dashicons';
 				content: "\f158";
 				vertical-align: middle;
@@ -311,14 +309,16 @@ class Admin_User_Message {
 			}
 		</style>
 		<div class="<?php echo esc_attr( get_option( self::SETTINGS_PREFIX . 'type', 'updated' ) ); ?> admin-user-message">
-			<p class="content"><?php echo wpautop( $content ); //xss ok ?></p>
+			<div class="content">
+				<?php echo wpautop( $content ); //xss ok ?>
+			</div>
 			<?php if ( ! empty( $is_dismiss ) ):  ?>
-				<p class="dismiss">
+				<div class="dismiss">
 					<a href="<?php echo admin_url( 'admin-ajax.php?action=admin_user_message_dismiss&admin_user_message_nonce=' . wp_create_nonce( 'admin_user_message_nonce' ) ); //xss ok ?>"
 					   title="<?php esc_html_e( 'Dismiss this message', 'admin-user-message' ); ?>">
 						<?php esc_html_e( 'Dismiss', 'admin-user-message' ); ?>
 					</a>
-				</p>
+				</div>
 			<?php endif ?>
 		</div>
 		<script>
