@@ -285,7 +285,7 @@ class Admin_User_Message {
 		?>
 		<style>
 			.admin-user-message p {
-				display: inline-block;
+				display: block;
 			}
 
 			.admin-user-message p.content {
