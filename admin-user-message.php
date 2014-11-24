@@ -323,7 +323,7 @@ class Admin_User_Message {
 		</div>
 		<script>
 			(function($) {
-				$('.admin-user-message p.dismiss a').on('click', function(event) {
+				$('.admin-user-message div.dismiss a').on('click', function(event) {
 					event.preventDefault();
 					var $link = $(this);
 					$.get(

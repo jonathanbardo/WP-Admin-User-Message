@@ -27,6 +27,9 @@ Please fill out an issue [here](https://github.com/jonathanbardo/WP-Admin-User-M
 
 ## Changelog ##
 
+### 0.0.4 ###
+Fix dismiss JS error
+
 ### 0.0.3 ###
 Change css for dismiss button
 
