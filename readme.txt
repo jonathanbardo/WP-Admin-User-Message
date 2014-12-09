@@ -25,6 +25,9 @@ Please fill out an issue [here](https://github.com/jonathanbardo/WP-Admin-User-M
 
 == Changelog ==
 
+= 0.0.5 =
+Fix dismiss PHP error on logout
+
 = 0.0.4 =
 Fix dismiss JS error
 
