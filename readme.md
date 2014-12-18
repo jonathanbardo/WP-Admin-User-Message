@@ -7,7 +7,7 @@ Add message to users of your site. Choose wheter they can dismiss it or not.
 **Contributors:** [jonathanbardo](http://profiles.wordpress.org/jonathanbardo)  
 **Tags:** [admin](http://wordpress.org/plugins/tags/admin), [message](http://wordpress.org/plugins/tags/message)  
 **Requires at least:** 4.0  
-**Tested up to:** 4.0  
+**Tested up to:** 4.1
 **Stable tag:** trunk (master)  
 **License:** [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)  
 
