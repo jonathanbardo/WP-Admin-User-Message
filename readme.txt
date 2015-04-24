@@ -1,8 +1,8 @@
 === Admin User Message ===
 Contributors:      jonathanbardo
 Tags:              admin, message
-Requires at least: 4.0
-Tested up to:      4.1
+Requires at least: 4.2
+Tested up to:      4.2
 Stable tag:        trunk
 License:           GPLv2 or later
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
@@ -22,8 +22,12 @@ This plugin will enable the site administrator to easily create an admin message
 **Improvement? Bugs?**
 
 Please fill out an issue [here](https://github.com/jonathanbardo/WP-Admin-User-Message/issues).
+See : https://make.wordpress.org/core/2015/04/23/spinners-and-dismissible-admin-notices-in-4-2/
 
 == Changelog ==
+
+= 0.0.6 =
+Added core dismiss button added in 4.2
 
 = 0.0.5 =
 Fix dismiss PHP error on logout

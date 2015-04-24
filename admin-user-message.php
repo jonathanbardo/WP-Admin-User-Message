@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Admin User Message
  * Description: Add message to users of wp-admin. Choose wheter they can dismiss it or not.
- * Version: 0.0.5
+ * Version: 0.0.6
  * Author: Jonathan Bardo
  * License: GPLv2+
  * Text Domain: admin-user-message
@@ -293,46 +293,19 @@ class Admin_User_Message {
 				float: right;
 			}
 
-			.admin-user-message div.dismiss a {
-				text-decoration: none;
-			}
-
-			.admin-user-message div.dismiss a:before {
-				font-family: 'dashicons';
-				content: "\f158";
-				vertical-align: middle;
-			}
-
 			.admin-user-message.update-nag p.content {
 				margin-right: 10px;
 			}
 		</style>
-		<div class="<?php echo esc_attr( get_option( self::SETTINGS_PREFIX . 'type', 'updated' ) ); ?> admin-user-message">
+		<div class="<?php echo esc_attr( get_option( self::SETTINGS_PREFIX . 'type', 'updated' ) ); ?> admin-user-message<?php echo ! empty( $is_dismiss ) ? ' notice is-dismissible' : '' ?>">
 			<div class="content">
 				<?php echo wpautop( $content ); //xss ok ?>
 			</div>
-			<?php if ( ! empty( $is_dismiss ) ):  ?>
-				<div class="dismiss">
-					<a href="<?php echo admin_url( 'admin-ajax.php?action=admin_user_message_dismiss&admin_user_message_nonce=' . wp_create_nonce( 'admin_user_message_nonce' ) ); //xss ok ?>"
-					   title="<?php esc_html_e( 'Dismiss this message', 'admin-user-message' ); ?>">
-						<?php esc_html_e( 'Dismiss', 'admin-user-message' ); ?>
-					</a>
-				</div>
-			<?php endif ?>
 		</div>
 		<script>
 			(function($) {
-				$('.admin-user-message div.dismiss a').on('click', function(event) {
-					event.preventDefault();
-					var $link = $(this);
-					$.get(
-						$link.attr('href'),
-						function(data) {
-							if (data.success === true) {
-								$link.parents('.admin-user-message').slideToggle();
-							}
-						}
-					)
+				$('.admin-user-message.notice.is-dismissible').on('click', '.notice-dismiss', function(event) {
+					$.get(<?php echo json_encode( admin_url( 'admin-ajax.php?action=admin_user_message_dismiss&admin_user_message_nonce=' . wp_create_nonce( 'admin_user_message_nonce' ) ) ) ?>);
 				});
 			})(jQuery);
 		</script>
