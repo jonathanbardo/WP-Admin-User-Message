@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Admin User Message
  * Description: Add message to users of wp-admin. Choose wheter they can dismiss it or not.
- * Version: 0.0.6
+ * Version: 0.0.7
  * Author: Jonathan Bardo
  * License: GPLv2+
  * Text Domain: admin-user-message
@@ -45,6 +45,18 @@ class Admin_User_Message {
 		}
 
 		add_filter( 'option_page_capability_' . self::PAGE_NAME, function(){ return apply_filters( 'admin_user_message_cap', 'manage_options' ); } );
+	}
+
+	/**
+	* Loads the translation files.
+	*
+	* @access public
+	* @action plugins_loaded
+	* @return void
+	*/
+	public static function i18n() {
+		// Load the translation of the plugin
+		load_plugin_textdomain( 'admin-user-message', false,  dirname( plugin_basename( __FILE__ ) ) . '/lang/' );
 	}
 
 	/**
@@ -375,3 +387,4 @@ class Admin_User_Message {
 }
 
 add_action( 'plugins_loaded', array( 'Admin_User_Message', 'setup' ) );
+add_action( 'plugins_loaded', array( 'Admin_User_Message', 'i18n' ), 2 );

@@ -1,0 +1,73 @@
+# Copyright (C) 2015 Admin User Message
+# This file is distributed under the same license as the Admin User Message package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Admin User Message 0.0.6\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/admin-user-"
+"message\n"
+"POT-Creation-Date: 2015-05-25 18:23:45+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: admin-user-message.php:59
+msgid "Activate message"
+msgstr ""
+
+#: admin-user-message.php:73
+msgid "Message type"
+msgstr ""
+
+#: admin-user-message.php:88
+msgid "Message content"
+msgstr ""
+
+#: admin-user-message.php:103
+msgid "Exclude message for roles"
+msgstr ""
+
+#: admin-user-message.php:118
+msgid "Allow message to be dismissed"
+msgstr ""
+
+#: admin-user-message.php:133
+msgid "Reset dismiss for everyone. (Force appearance of message)"
+msgstr ""
+
+#: admin-user-message.php:181
+msgid "Informative"
+msgstr ""
+
+#: admin-user-message.php:182
+msgid "Important"
+msgstr ""
+
+#: admin-user-message.php:183
+msgid "Update"
+msgstr ""
+
+#. #-#-#-#-#  plugin.pot (Admin User Message 0.0.6)  #-#-#-#-#
+#. Plugin Name of the plugin/theme
+#: admin-user-message.php:247 admin-user-message.php:248
+msgid "Admin User Message"
+msgstr ""
+
+#: admin-user-message.php:261
+msgid "Admin User Message Settings"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Add message to users of wp-admin. Choose wheter they can dismiss it or not."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Jonathan Bardo"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://jonathanbardo.com"
+msgstr ""

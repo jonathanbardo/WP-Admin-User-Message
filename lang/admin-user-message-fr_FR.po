@@ -1,0 +1,75 @@
+# Copyright (C) 2015 Admin User Message
+# This file is distributed under the same license as the Admin User Message package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Admin User Message 0.0.6\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/admin-user-message\n"
+"POT-Creation-Date: 2015-05-25 14:34-0500\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-05-25 14:45-0500\n"
+"Last-Translator: Jonathan Bardo <info@jonathanbardo.com>\n"
+"Language-Team: \n"
+"X-Generator: Poedit 1.8\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: fr_FR\n"
+
+#: admin-user-message.php:59
+msgid "Activate message"
+msgstr "Activé le message"
+
+#: admin-user-message.php:73
+msgid "Message type"
+msgstr "Type du message"
+
+#: admin-user-message.php:88
+msgid "Message content"
+msgstr "Contenu du message"
+
+#: admin-user-message.php:103
+msgid "Exclude message for roles"
+msgstr "Exclure le message pour les rôles suivants"
+
+#: admin-user-message.php:118
+msgid "Allow message to be dismissed"
+msgstr "Permettre au message d’être ignoré"
+
+#: admin-user-message.php:133
+msgid "Reset dismiss for everyone. (Force appearance of message)"
+msgstr "Forcer l’affichage du message pour tous les utilisateurs"
+
+#: admin-user-message.php:181
+msgid "Informative"
+msgstr "Informatif"
+
+#: admin-user-message.php:182
+msgid "Important"
+msgstr "Important"
+
+#: admin-user-message.php:183
+msgid "Update"
+msgstr "Mise à jour"
+
+#. Plugin Name of the plugin/theme
+#: admin-user-message.php:247 admin-user-message.php:248
+msgid "Admin User Message"
+msgstr "Message pour les utilisateurs de l’admin"
+
+#: admin-user-message.php:261
+msgid "Admin User Message Settings"
+msgstr "Paramètres du plugin"
+
+#. Description of the plugin/theme
+msgid "Add message to users of wp-admin. Choose wheter they can dismiss it or not."
+msgstr ""
+"Ajouter un message pour les utilisateurs de wp-admin. Choisissez s’ils peuvent "
+"rejeter ou pas."
+
+#. Author of the plugin/theme
+msgid "Jonathan Bardo"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://jonathanbardo.com"
+msgstr ""
