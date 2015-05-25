@@ -15,18 +15,18 @@ Add message to users of your site. Choose wheter they can dismiss it or not.
 
 **Note: This plugin will only work with WordPress 4.0 or higher**
 
-This plugin will enable the site administrator to easily create an admin message present on all pages. The admin has the option to let the user dismiss the message for the duration of his session. 
+This plugin will enable the site administrator to easily create an admin message present on all pages. The admin has the option to let the user dismiss the message for the duration of his session.
 
-**Languages Supported:**
+## Screenshots ##
 
- * English
+### Admin settings page
 
-**Improvement? Bugs?**
-
-Please fill out an issue [here](https://github.com/jonathanbardo/WP-Admin-User-Message/issues).
-See : https://make.wordpress.org/core/2015/04/23/spinners-and-dismissible-admin-notices-in-4-2/
+![Admin settings page](assets/screenshot-1.png)
 
 ## Changelog ##
+
+### 0.0.7 ###
+Added .pot and french translation
 
 ### 0.0.6 ###
 Added core dismiss button added in 4.2
