@@ -7,7 +7,7 @@ Add message to users of your site. Choose wheter they can dismiss it or not.
 **Contributors:** [jonathanbardo](http://profiles.wordpress.org/jonathanbardo)  
 **Tags:** [admin](http://wordpress.org/plugins/tags/admin), [message](http://wordpress.org/plugins/tags/message)  
 **Requires at least:** 4.2  
-**Tested up to:** 4.2  
+**Tested up to:** 4.3  
 **Stable tag:** trunk (master)  
 **License:** [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)  
 
@@ -24,6 +24,9 @@ This plugin will enable the site administrator to easily create an admin message
 ![Admin settings page](assets/screenshot-1.png)
 
 ## Changelog ##
+
+### 0.0.8 ###
+Add WordPress 4.3 compatibility
 
 ### 0.0.7 ###
 Added .pot and french translation
