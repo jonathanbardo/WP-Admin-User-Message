@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Admin User Message
  * Description: Add message to users of wp-admin. Choose wheter they can dismiss it or not.
- * Version: 0.0.8
+ * Version: 0.0.9
  * Author: Jonathan Bardo
  * License: GPLv2+
  * Text Domain: admin-user-message
@@ -294,6 +294,12 @@ class Admin_User_Message {
 		}
 
 		$is_dismiss = get_option( self::SETTINGS_PREFIX . 'dismiss' );
+		$class      = get_option( self::SETTINGS_PREFIX . 'type', 'updated' );
+
+		if ( 'update-nag' === $class ) {
+			$class = 'update admin-user-message-update-nag';
+		}
+
 		?>
 		<style>
 			.admin-user-message div.content {
@@ -306,11 +312,11 @@ class Admin_User_Message {
 				float: right;
 			}
 
-			.admin-user-message.update-nag p.content {
-				margin-right: 10px;
+			div.update.admin-user-message-update-nag {
+				border-left-color: #FFBA00;
 			}
 		</style>
-		<div class="<?php echo esc_attr( get_option( self::SETTINGS_PREFIX . 'type', 'updated' ) ); ?> admin-user-message<?php echo ! empty( $is_dismiss ) ? ' notice is-dismissible' : '' ?>">
+		<div class="<?php echo esc_attr( $class ); ?> admin-user-message<?php echo ! empty( $is_dismiss ) ? ' notice is-dismissible' : '' ?>">
 			<div class="content">
 				<?php echo wpautop( $content ); //xss ok ?>
 			</div>

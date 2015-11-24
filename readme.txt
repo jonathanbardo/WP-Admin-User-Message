@@ -2,7 +2,7 @@
 Contributors:      jonathanbardo
 Tags:              admin, message
 Requires at least: 4.2
-Tested up to:      4.3
+Tested up to:      4.4
 Stable tag:        trunk
 License:           GPLv2 or later
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
@@ -30,6 +30,9 @@ Please fill out an issue [here](https://github.com/jonathanbardo/WP-Admin-User-M
 See : https://make.wordpress.org/core/2015/04/23/spinners-and-dismissible-admin-notices-in-4-2/
 
 == Changelog ==
+
+= 0.0.9 =
+Add WordPress 4.4 compatibility and change update box layout
 
 = 0.0.8 =
 Add WordPress 4.3 compatibility
