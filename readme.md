@@ -13,7 +13,7 @@ Add message to users of your site. Choose wheter they can dismiss it or not.
 
 ## Description ##
 
-**Note: This plugin will only work with WordPress 4.0 or higher**
+**Note: This plugin only works with WordPress 4.2 or higher**
 
 This plugin will enable the site administrator to easily create an admin message present on all pages. The admin has the option to let the user dismiss the message for the duration of his session.
 
